@@ -1,4 +1,4 @@
-package com.wildwolf.myplayer.presenter;
+package com.wildwolf.myplayer.presenter.contract;
 
 
 import com.wildwolf.myplayer.base.BasePresenter;

@@ -4,6 +4,7 @@ import android.support.annotation.NonNull;
 
 import com.google.common.base.Preconditions;
 import com.wildwolf.myplayer.base.RxPresenter;
+import com.wildwolf.myplayer.presenter.contract.WelcomeContract;
 import com.wildwolf.myplayer.utils.RxUtil;
 
 import java.util.ArrayList;

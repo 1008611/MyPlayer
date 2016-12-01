@@ -1,6 +1,7 @@
 package com.wildwolf.myplayer.ui.activity;
 
 import android.os.Bundle;
+
 import com.wildwolf.myplayer.R;
 import com.wildwolf.myplayer.base.BaseActivity;
 import com.wildwolf.myplayer.presenter.WelcomePresenter;

@@ -4,6 +4,8 @@ import android.content.Context;
 import android.content.Intent;
 
 import com.wildwolf.myplayer.MainActivity;
+import com.wildwolf.myplayer.model.bean.VideoInfo;
+import com.wildwolf.myplayer.ui.activity.VideoInfoActivity;
 import com.wildwolf.myplayer.ui.activity.WelcomeActivity;
 
 
@@ -18,6 +20,12 @@ public class JumpUtil {
 
     private static void jump(Context mContext, Class<?> clazz) {
         Intent intent = new Intent(mContext,clazz);
+        mContext.startActivity(intent);
+    }
+
+    public static void go2VideoInfoActivity(Context mContext, VideoInfo info) {
+        Intent intent = new Intent(mContext, VideoInfoActivity.class);
+        intent.putExtra("videoInfo", info);
         mContext.startActivity(intent);
     }
 }

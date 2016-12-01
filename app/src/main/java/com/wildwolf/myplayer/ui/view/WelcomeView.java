@@ -8,7 +8,7 @@ import com.google.common.base.Preconditions;
 import com.wildwolf.myplayer.R;
 import com.wildwolf.myplayer.base.RootView;
 import com.wildwolf.myplayer.component.ImageLoader;
-import com.wildwolf.myplayer.presenter.WelcomeContract;
+import com.wildwolf.myplayer.presenter.contract.WelcomeContract;
 import com.wildwolf.myplayer.ui.activity.WelcomeActivity;
 import com.wildwolf.myplayer.utils.EventUtil;
 import com.wildwolf.myplayer.utils.JumpUtil;
