@@ -7,8 +7,9 @@ import com.wildwolf.myplayer.model.bean.VideoRes;
 /**
  * Created by ${wild00wolf} on 2016/12/1.
  */
-public interface VideoInfoConteact {
+public interface VideoInfoContract {
     interface View extends BaseView<Presenter> {
+
         void showContent(VideoRes videoRes);
 
         boolean isActive();
@@ -26,5 +27,6 @@ public interface VideoInfoConteact {
         void collect();
 
         void insertRecord();
+
     }
 }

@@ -1,16 +1,13 @@
 package com.wildwolf.myplayer.presenter;
 
 import android.support.annotation.NonNull;
-import android.util.Log;
 
 import com.google.common.base.Preconditions;
-import com.wildwolf.myplayer.base.BasePresenter;
 import com.wildwolf.myplayer.base.RxPresenter;
 import com.wildwolf.myplayer.model.bean.VideoRes;
 import com.wildwolf.myplayer.model.net.RetrofitHelper;
 import com.wildwolf.myplayer.model.net.VideoHttpResponse;
 import com.wildwolf.myplayer.presenter.contract.RecommendContract;
-import com.wildwolf.myplayer.ui.view.RecommendView;
 import com.wildwolf.myplayer.utils.RxUtil;
 import com.wildwolf.myplayer.utils.StringUtils;
 
@@ -36,7 +33,7 @@ public class RecommendPresenter extends RxPresenter implements RecommendContract
         getPageHomeInfo();
     }
 
-    public void getPageHomeInfo() {
+    private void getPageHomeInfo() {
         Subscription subscription = RetrofitHelper.getVideoApi().getHomePage()
                 .compose(RxUtil.<VideoHttpResponse<VideoRes>>rxSchedulerHelper())
                 .compose(RxUtil.<VideoRes>handleResult())

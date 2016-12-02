@@ -1,9 +1,6 @@
 package com.wildwolf.myplayer.ui.fragment;
 
-import android.os.Bundle;
 import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
 
 import com.wildwolf.myplayer.R;
 import com.wildwolf.myplayer.base.BaseFragment;
@@ -11,7 +8,6 @@ import com.wildwolf.myplayer.presenter.RecommendPresenter;
 import com.wildwolf.myplayer.ui.view.RecommendView;
 
 import butterknife.BindView;
-import butterknife.ButterKnife;
 
 /**
  * Created by ${wild00wolf} on 2016/12/1.

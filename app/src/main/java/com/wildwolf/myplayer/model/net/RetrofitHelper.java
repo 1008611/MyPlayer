@@ -1,6 +1,5 @@
 package com.wildwolf.myplayer.model.net;
 
-import android.os.Build;
 import android.support.compat.BuildConfig;
 
 import com.wildwolf.myplayer.app.Constants;
