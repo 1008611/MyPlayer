@@ -29,6 +29,10 @@
             </intent-filter>
         </activity>
         <activity android:name=".MainActivity" />
+        <activity android:name=".ui.activity.VideoInfoActivity"
+            android:theme="@style/CustomTransparent"/>
+        <activity android:name=".ui.activity.SearchActivity"
+            android:theme="@style/CustomTransparent"/>
     </application>
 
 </manifest>
