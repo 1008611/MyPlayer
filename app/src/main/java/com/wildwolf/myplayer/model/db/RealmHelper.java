@@ -4,8 +4,11 @@ package com.wildwolf.myplayer.model.db;
 import com.wildwolf.myplayer.model.bean.Collection;
 import com.wildwolf.myplayer.model.bean.Record;
 
+import java.util.List;
+
 import io.realm.Realm;
 import io.realm.RealmResults;
+import io.realm.Sort;
 
 /**
  * Created by ${wild00wolf} on 2016/11/30.
@@ -68,5 +71,16 @@ public class RealmHelper {
             }
         }
         return false;
+    }
+
+    public void deleteAllRecord() {
+        getRealm().beginTransaction();
+        getRealm().delete(Record.class);
+        getRealm().commitTransaction();
+    }
+
+    public List<Record> getRecordList() {
+        RealmResults<Record> records = getRealm().where(Record.class).findAllSorted("time", Sort.DESCENDING);
+        return getRealm().copyFromRealm(records);
     }
 }

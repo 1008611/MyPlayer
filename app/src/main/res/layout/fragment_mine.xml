@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/both_match_style"
+    android:orientation="vertical">
+
+    <com.wildwolf.myplayer.ui.view.MineView
+        android:id="@+id/mine_view"
+        style="@style/both_match_style" />
+</android.support.design.widget.CoordinatorLayout>

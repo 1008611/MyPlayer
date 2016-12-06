@@ -10,6 +10,7 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 
+import com.afollestad.materialdialogs.color.ColorChooserDialog;
 import com.google.common.base.Preconditions;
 import com.mikepenz.material_design_iconic_typeface_library.MaterialDesignIconic;
 import com.wildwolf.myplayer.MainActivity;
@@ -17,6 +18,8 @@ import com.wildwolf.myplayer.R;
 import com.wildwolf.myplayer.base.RootView;
 import com.wildwolf.myplayer.presenter.contract.MainContract;
 import com.wildwolf.myplayer.ui.adapter.ContentPageAdapter;
+import com.wildwolf.myplayer.ui.fragment.ClassificationFragment;
+import com.wildwolf.myplayer.ui.fragment.DiscoverFragment;
 import com.wildwolf.myplayer.ui.fragment.MineFragment;
 import com.wildwolf.myplayer.ui.fragment.RecommendFragment;
 import com.wildwolf.myplayer.utils.EventUtil;
@@ -25,6 +28,7 @@ import com.wildwolf.myplayer.widget.ResideLayout;
 import com.wildwolf.myplayer.widget.UnScrollViewPager;
 
 import org.simple.eventbus.EventBus;
+import org.simple.eventbus.Subscriber;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -114,8 +118,12 @@ public class MainView extends RootView<MainContract.Presenter> implements MainCo
     private List<Fragment> initFragments() {
         List<Fragment> fragments = new ArrayList<>();
         Fragment fragment = new RecommendFragment();
+        Fragment fragment2 = new ClassificationFragment();
+        Fragment fragment3 = new DiscoverFragment();
         Fragment mainFragment = new MineFragment();
         fragments.add(fragment);
+        fragments.add(fragment2);
+        fragments.add(fragment3);
         fragments.add(mainFragment);
         return fragments;
     }
@@ -157,16 +165,16 @@ public class MainView extends RootView<MainContract.Presenter> implements MainCo
         });
     }
 
-//    @Subscriber(tag = MainFragment.SET_THEME)
-//    public void setTheme(String content) {
-//        new ColorChooserDialog.Builder(activity, R.string.theme)
-//                .customColors(R.array.colors, null)
-//                .doneButton(R.string.done)
-//                .cancelButton(R.string.cancel)
-//                .allowUserColorInput(false)
-//                .allowUserColorInputAlpha(false)
-//                .show();
-//    }
+    @Subscriber(tag = MineFragment.SET_THEME)
+    public void setTheme(String content) {
+        new ColorChooserDialog.Builder(activity, R.string.theme)
+                .customColors(R.array.colors, null)
+                .doneButton(R.string.done)
+                .cancelButton(R.string.cancel)
+                .allowUserColorInput(false)
+                .allowUserColorInputAlpha(false)
+                .show();
+    }
 
     private void postBannerState(final boolean stop) {
         new Handler().postDelayed(new Runnable() {

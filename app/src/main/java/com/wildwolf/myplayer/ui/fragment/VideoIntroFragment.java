@@ -1,6 +1,5 @@
 package com.wildwolf.myplayer.ui.fragment;
 
-import android.support.v4.app.Fragment;
 import android.support.v7.widget.GridLayoutManager;
 import android.view.LayoutInflater;
 import android.view.View;

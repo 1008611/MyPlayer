@@ -13,6 +13,15 @@
         <item name="android:windowIsTranslucent">false</item>
     </style>
 
+
+    <style name="ActionBarStyle" parent="Widget.AppCompat.ActionBar">
+        <item name="contentInsetStart">0dp</item>
+        <item name="contentInsetEnd">0dp</item>
+    </style>
+
+    <style name="common_tv_bold_style" parent="common_tv_style">
+        <item name="android:textStyle">bold</item>
+    </style>
     <style name="MenuStyle">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
