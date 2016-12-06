@@ -4,6 +4,7 @@ package com.wildwolf.myplayer.utils;
 import android.text.TextUtils;
 
 import com.wildwolf.myplayer.model.net.ApiException;
+import com.wildwolf.myplayer.model.net.GankHttpResponse;
 import com.wildwolf.myplayer.model.net.VideoHttpResponse;
 
 import rx.Observable;
@@ -60,24 +61,24 @@ public class RxUtil {
             }
         };
     }
-//
-//    public static <T> Observable.Transformer<GankHttpResponse<T>, T> handleGankResult() {   //compose判断结果
-//        return new Observable.Transformer<GankHttpResponse<T>, T>() {
-//            @Override
-//            public Observable<T> call(Observable<GankHttpResponse<T>> httpResponseObservable) {
-//                return httpResponseObservable.flatMap(new Func1<GankHttpResponse<T>, Observable<T>>() {
-//                    @Override
-//                    public Observable<T> call(GankHttpResponse<T> tGankHttpResponse) {
-//                        if(!tGankHttpResponse.getError()) {
-//                            return createData(tGankHttpResponse.getResults());
-//                        } else {
-//                            return Observable.error(new ApiException("服务器返回error"));
-//                        }
-//                    }
-//                });
-//            }
-//        };
-//    }
+
+    public static <T> Observable.Transformer<GankHttpResponse<T>, T> handleGankResult() {   //compose判断结果
+        return new Observable.Transformer<GankHttpResponse<T>, T>() {
+            @Override
+            public Observable<T> call(Observable<GankHttpResponse<T>> httpResponseObservable) {
+                return httpResponseObservable.flatMap(new Func1<GankHttpResponse<T>, Observable<T>>() {
+                    @Override
+                    public Observable<T> call(GankHttpResponse<T> tGankHttpResponse) {
+                        if(!tGankHttpResponse.isError()) {
+                            return createData(tGankHttpResponse.getResults());
+                        } else {
+                            return Observable.error(new ApiException("服务器返回error"));
+                        }
+                    }
+                });
+            }
+        };
+    }
 
     /**
      * 生成Observable

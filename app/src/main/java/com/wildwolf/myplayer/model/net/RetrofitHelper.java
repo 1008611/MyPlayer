@@ -27,6 +27,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class RetrofitHelper {
     private static OkHttpClient okHttpClient = null;
     private static VideoApis videoApi;
+    private static GankApis gankApis;
 
 
     public static VideoApis getVideoApi() {
@@ -41,6 +42,19 @@ public class RetrofitHelper {
             videoApi = retrofit.create(VideoApis.class);
         }
         return videoApi;
+    }
+    public static GankApis getGankApi() {
+        initOKHttp();
+        if (gankApis == null) {
+            Retrofit retrofit = new Retrofit.Builder()
+                    .client(okHttpClient)
+                    .baseUrl(GankApis.HOST)
+                    .addConverterFactory(GsonConverterFactory.create())
+                    .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
+                    .build();
+            gankApis = retrofit.create(GankApis.class);
+        }
+        return gankApis;
     }
 
     private static void initOKHttp() {

@@ -1,14 +1,11 @@
 package com.wildwolf.myplayer.ui.activity;
 
-import android.os.Bundle;
-
 import com.wildwolf.myplayer.R;
-import com.wildwolf.myplayer.presenter.VideoInfoPresenter;
+import com.wildwolf.myplayer.base.NewSwipeBackActivity;
 import com.wildwolf.myplayer.presenter.VideoListPresenter;
 import com.wildwolf.myplayer.ui.view.VideoListView;
 
 import butterknife.BindView;
-import butterknife.ButterKnife;
 
 /**
  * Created by ${wild00wolf} on 2016/12/5.

@@ -1,6 +1,7 @@
 package com.wildwolf.myplayer.ui.view;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Handler;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
@@ -17,6 +18,7 @@ import com.wildwolf.myplayer.MainActivity;
 import com.wildwolf.myplayer.R;
 import com.wildwolf.myplayer.base.RootView;
 import com.wildwolf.myplayer.presenter.contract.MainContract;
+import com.wildwolf.myplayer.ui.activity.WelfareActivity;
 import com.wildwolf.myplayer.ui.adapter.ContentPageAdapter;
 import com.wildwolf.myplayer.ui.fragment.ClassificationFragment;
 import com.wildwolf.myplayer.ui.fragment.DiscoverFragment;
@@ -213,7 +215,7 @@ public class MainView extends RootView<MainContract.Presenter> implements MainCo
                 EventUtil.showToast(mContext, "敬请期待");
                 break;
             case R.id.tv_fuli:
-                EventUtil.showToast(mContext, "敬请期待");
+                mContext.startActivity(new Intent(mContext, WelfareActivity.class));
                 break;
             case R.id.tv_share:
                 EventUtil.showToast(mContext, "敬请期待");

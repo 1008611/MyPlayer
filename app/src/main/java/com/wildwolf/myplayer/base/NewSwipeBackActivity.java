@@ -1,4 +1,4 @@
-package com.wildwolf.myplayer.ui.activity;
+package com.wildwolf.myplayer.base;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;

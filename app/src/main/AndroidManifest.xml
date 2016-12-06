@@ -35,6 +35,8 @@
             android:theme="@style/CustomTransparent"/>
         <activity android:name=".ui.activity.VideoListActivity"
             android:theme="@style/CustomTransparent"/>
+        <activity android:name=".ui.activity.WelfareActivity"
+            android:theme="@style/CustomTransparent"/>
     </application>
 
 </manifest>
